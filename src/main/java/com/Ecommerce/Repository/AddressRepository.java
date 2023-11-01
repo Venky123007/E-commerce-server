@@ -1,0 +1,8 @@
+package com.Ecommerce.Repository;
+
+import com.Ecommerce.model.Address;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface AddressRepository extends JpaRepository<Address, Long> {
+
+}
