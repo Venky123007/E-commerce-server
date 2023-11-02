@@ -36,6 +36,7 @@ public class AppConfig {
                                 "http://localhost:3000",
                                 "http://localhost:5173",
                                 "https://aira-fashions.vercel.app",
+                                "https://aira-fashions.vercel.app/",
                                 "https://aira-fashions.vercel.app/login",
                                 "https://aira-fashions.vercel.app/register",
                                 "https://aira-fashions.vercel.app/cart",
