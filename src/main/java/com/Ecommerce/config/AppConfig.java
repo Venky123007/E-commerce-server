@@ -33,7 +33,7 @@ public class AppConfig {
                         CorsConfiguration cfg = new CorsConfiguration();
 
                         cfg.setAllowedOrigins(Arrays.asList(
-                                "http://localhost:3000",
+                                "http://localhost:3000/",
                                 "http://localhost:5173",
                                 "https://aira-fashions.vercel.app",
                                 "https://aira-fashions.vercel.app/",
