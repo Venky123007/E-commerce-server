@@ -11,6 +11,7 @@ import com.razorpay.Payment;
 import com.razorpay.PaymentLink;
 import com.razorpay.RazorpayClient;
 import com.razorpay.RazorpayException;
+import com.razorpay.*;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -44,6 +45,8 @@ public class PaymentController {
 
         try {
             RazorpayClient razorpay = new RazorpayClient(apiKey, apiSecret);
+            System.out.println("apiKey-------------------" + apiKey);
+            System.out.println("apiSecret-------------------" + apiSecret);
 
             JSONObject paymentLinkRequest = new JSONObject();
 

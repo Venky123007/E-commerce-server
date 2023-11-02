@@ -34,12 +34,20 @@ public class AppConfig {
 
                         cfg.setAllowedOrigins(Arrays.asList(
                                 "http://localhost:3000",
-                                "http://localhost:4200",
                                 "http://localhost:5173",
                                 "https://aira-fashions.vercel.app",
                                 "https://aira-fashions.vercel.app/login",
+                                "https://aira-fashions.vercel.app/register",
+                                "https://aira-fashions.vercel.app/cart",
+                                "https://aira-fashions.vercel.app/checkout",
                                 "https://airaa-fashions.vercel.app/",
-                                "https://airaa-fashions-venkatesh-gs-projects.vercel.app"
+                                "https://airaa-fashions.vercel.app/login",
+                                "https://airaa-fashions.vercel.app/register",
+                                "https://airaa-fashions.vercel.app/cart",
+                                "https://airaa-fashions-venkatesh-gs-projects.vercel.app",
+                                "https://airaa-fashions-git-master-venkatesh-gs-projects.vercel.app/",
+                                "https://aira-fashions-git-master-venkatesh-gs-projects.vercel.app/",
+                                "https://aira-fashions-venkatesh-gs-projects.vercel.app/"
                         ));
                         cfg.setAllowedMethods(Collections.singletonList("*"));
                         cfg.setAllowCredentials(true);
