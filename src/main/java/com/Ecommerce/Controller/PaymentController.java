@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 
 @RestController
 @RequestMapping("/api")
@@ -79,12 +80,13 @@ public class PaymentController {
 
             return new ResponseEntity<PaymentLinkResponse>(res, HttpStatus.CREATED);
 
-        }catch (Exception e){
-            throw new RazorpayException(e.getMessage());
+        }catch (RazorpayException e){
+            //System.out.println(e.getMessage());
+            throw new RazorpayException("RazorPAy Error ------------------------"+e.getMessage());
         }
     }
 
-    @GetMapping("/payments")
+    @GetMapping("/payments?payment_id={paymentId}&order_id={orderId}")
     public ResponseEntity<ApiResponse> redirect(@RequestParam(name = "payment_id") String paymentId, @RequestParam(name = "order_id") Long orderId) throws OrderException, RazorpayException {
 
         Order order = orderService.findOrderById(orderId);
@@ -112,5 +114,11 @@ public class PaymentController {
         catch (Exception e){
             throw new RazorpayException(e.getMessage());
         }
+    }
+
+    @GetMapping("/payments/{orderId}")
+    public RedirectView redirect(@PathVariable Long orderId) {
+        String redirectUrl = "http://localhost:5173/payment/" + orderId;
+        return new RedirectView(redirectUrl);
     }
 }
